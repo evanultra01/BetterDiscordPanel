@@ -29,9 +29,6 @@ const createMainWindow = async () => {
       preload: path.join(app.getAppPath(), './app/preload.js'),
     },
   });
-  Object.defineProperty(navigator, 'userAgent', {
-    get: function () { return 'BDP (http://example.com), v0.0.1'; }
-  });
   win.webContents.userAgent = "BDP (http://example.com), v0.0.1"
   win.on('ready-to-show', () => {
     win.maximize();
